@@ -1,0 +1,34 @@
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.new-tweet h2 {
+  text-align: center; /*remove this if want text not aligned center*/
+}
+
+#tweet-entry-area {
+  width: 60%; /*width of parent area as a percentage*/
+}
+
+#tweet-text {
+  color: #545149;
+  font-weight: 600;
+  border: 0;
+  border-bottom: #545149 solid 10px;
+  background-color: #f4f1ec;
+  width: 100%; /*width of parent area as a percentage*/
+}
+
+.submit-tweet {
+  font-family: 'Bungee', sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+#tweet-button {
+  color: #FFFFFF;
+  background-color: #4056A1;
+}
