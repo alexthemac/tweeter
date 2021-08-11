@@ -7,15 +7,23 @@ $(document).ready(function() {
     event.preventDefault();
 
     //Object representing typed in tweet (to get actual data append .val() to end)
-    const $typedTweet = $(this).parent().find("#tweet-text");
+    const $typedTweetObj = $(this).parent().find("#tweet-text");
+    const $typedTweet = $typedTweetObj.val();
+    //Alert if tweet entered is empty or too long. 
+    if (!$typedTweet) {
+      alert("Tweet is empty! Please try again.")
+    } else if ($typedTweet.length > 140) {
+      alert("Tweet is too long! Please try again.")
+    //If tweet is correct size and not empty, send tweet data to database.
+    } else {
+      //String represented typed in tweet but in standard URL-encoded notation
+      const $serializedTweet = $typedTweetObj.serialize() 
 
-    //String represented typed in tweet but in standard URL-encoded notation
-    const $serializedTweet = $typedTweet.serialize() 
-
-    //Send entered tweet data to the tweetData "database" (.then not required...but nice to have)
-    $.ajax({url: '/tweets', data: $serializedTweet, method: 'POST'})
-    .then(function(response) {
-      console.log("Succesful, tweet passed to tweetData");
-    })
+      //Send entered tweet data to the tweetData "database" (.then not required...but nice to have)
+      $.ajax({url: '/tweets', data: $serializedTweet, method: 'POST'})
+      .then(function(response) {
+        console.log("Succesful, tweet passed to tweetData");
+      })
+    };
   })  
 });
