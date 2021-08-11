@@ -67,8 +67,8 @@ $(document).ready(function() {
     for (const tweet of tweets) {
       //passes each tweet data to createTweetElement function
       $returnTweetHTML = createTweetElement(tweet);
-      //returned HTML is then appended to index.html
-      $('.tweets-container').append($returnTweetHTML)
+      //returned HTML is then prepended to index.html (added at top: prepend. added at bottom: append)
+      $('.tweets-container').prepend($returnTweetHTML)
     }
   }
 
@@ -85,7 +85,38 @@ $(document).ready(function() {
     });
   }
 
-  //Calls loadTweets function. This allows it to run asynchronously. Once ready the response is sent to the renderTweets function.
+  //Calls loadTweets on page load. This allows it to run asynchronously. Once ready the response is sent to the renderTweets function.
   loadTweets();
+
+  //Listens for the submit event on tweet button. When pressed, sends entered tweet to the tweetData "Database"
+  $("#tweet-entry-area").on("submit", function(event) {
+    //Prevent page from reloading once submit button pressed
+    event.preventDefault();
+
+    //Object representing typed in tweet
+    const $typedTweetObj = $(this).parent().find("#tweet-text");
+    //Actual text typed in
+    const $typedTweet = $typedTweetObj.val();
+
+    //Alert if tweet entered is empty or too long. 
+    if (!$typedTweet) {
+      alert("Tweet is empty! Please try again.")
+    } else if ($typedTweet.length > 140) {
+      alert("Tweet is too long! Please try again.")
+    //If tweet is correct size and not empty, send tweet data to database.
+    } else {
+      //String represented typed in tweet but in standard URL-encoded notation
+      const $serializedTweet = $typedTweetObj.serialize() 
+
+      //Send entered tweet data to the tweetData "database"
+      $.ajax({url: '/tweets', data: $serializedTweet, method: 'POST'})
+      .then(function(response) {
+        //Empty the currently loaded tweets (prevents duplicates)
+        $(".tweets-container").empty();
+        //Loads tweets (including newest tweet)
+        loadTweets();
+      })
+    };
+  })
 });
 
