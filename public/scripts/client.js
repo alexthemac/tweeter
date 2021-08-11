@@ -45,7 +45,7 @@ $(document).ready(function() {
                         </div>
                         <div class="header-right">${tweetObj.user.handle}</div>
                       </header>
-                      <p>${tweetObj.content.text}</p>
+                      <p>${escape(tweetObj.content.text)}</p>
                       <footer>
                         <div>${timeago.format(tweetObj.created_at)}</div> 
                         <div class="footer-icons">
@@ -113,10 +113,18 @@ $(document).ready(function() {
       .then(function(response) {
         //Empty the currently loaded tweets (prevents duplicates)
         $(".tweets-container").empty();
-        //Loads tweets (including newest tweet)
+        //Loads tweets (including newest tweet that was just entered)
         loadTweets();
       })
     };
   })
+
+  //Function to transform text entered to prevent an XSS attack with escaping (is used inside createTweetElement function)
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
 });
 
