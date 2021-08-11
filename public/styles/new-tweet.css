@@ -10,14 +10,14 @@
 }
 
 #tweet-entry-area {
-  width: 60%; /*width of parent area as a percentage*/
+  width: 80%; /*width of parent area as a percentage*/
 }
 
 #tweet-text {
   color: #545149;
   font-weight: 600;
   border: 0;
-  border-bottom: #545149 solid 10px;
+  border-bottom: #545149 solid 4px;
   background-color: #f4f1ec;
   width: 100%; /*width of parent area as a percentage*/
 }

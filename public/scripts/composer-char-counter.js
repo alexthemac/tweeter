@@ -2,12 +2,13 @@
 $(document).ready(function() {
   //Sets counter to equal the number of chars entered. If number of chars entered exceeds 140, counter should turn red and display negative number.
   $("#tweet-text").on("input", function(event) {
+    //--------DELETE ON FINAL SUBMISSION, FOR OWN INFORMATION
     // $(this) references the HTML node for the text form input (because we have #tweet-text which is assigned to the text form input)
     // $(this).va() refers the value entered into the text form
     // $(this).val().length is the lenght of string in the text form box
   
     let charsRemaining = 140 - $(this).val().length;
-    let visibleCounter = $(this).next().find('.counter'); //same as $('.counter');
+    let visibleCounter = $(this).next().find('.counter'); //$(this).next().find('.counter') is same as $('.counter');
 
     //Update counter with chars remaining
     visibleCounter.val(charsRemaining); 
