@@ -1,17 +1,23 @@
-.tweet-container {
+.tweets-container {
+  /* border: #545149 4px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px; */
+  width: 80%;
+}
+
+.tweet-article {
   border: #545149 4px solid;
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 10px;
-  width: 80%;
-}
 
-.tweet {
+
   display: flex;
   flex-direction: column;
 }
 
-.tweet header {
+.tweet-article header {
   
   display: flex;
   flex-direction: row;
@@ -28,7 +34,7 @@
 }
 
 
-.tweet p {
+.tweet-article p {
   margin: 0;
   color: #545149;
   font-weight: 600;
@@ -36,7 +42,7 @@
   border-bottom: #545149 solid 4px;
 }
 
-.tweet footer {
+.tweet-article footer {
   /* border: rgb(217, 255, 0) 2px dotted; */
   display: flex;
   justify-content: space-between;

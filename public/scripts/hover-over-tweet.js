@@ -1,19 +1,19 @@
 //Waits for dom to load before using on input...
 $(document).ready(function() {
-  console.log("mouse");
+
   //Add or remove box shadow when mouse enters tweet area
-  $(".tweet").on({
+  $(".tweet-article").on({
     //Add box shadow 
     mouseenter: function () {
-      $(this).parent().css("box-shadow", "10px 5px 5px green");
+      $(this).css("box-shadow", "10px 5px 5px green");
     },
     //Remove box shadow
     mouseleave: function () {
-      $(this).parent().css("box-shadow", "revert");
+      $(this).css("box-shadow", "revert");
     }
   })
   //Add or remove color from icon
-  $("#flag").on({
+  $(".flag").on({
     //Change icon green 
     mouseenter: function () {
       $(this).css("color", "green");
@@ -24,7 +24,7 @@ $(document).ready(function() {
     }
   })
   //Add or remove color from icon
-  $("#retweet").on({
+  $(".retweet").on({
     //Change icon green 
     mouseenter: function () {
       $(this).css("color", "green");
@@ -35,7 +35,7 @@ $(document).ready(function() {
     }
   })
   //Add or remove color from icon
-  $("#heart").on({
+  $(".heart").on({
     //Change icon green 
     mouseenter: function () {
       $(this).css("color", "green");
