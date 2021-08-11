@@ -4,9 +4,35 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
+// const { response } = require("express");
 
 $(document).ready(function() {
+
+  //Database of all tweets (DEPRECATED: replaced by actual database from /tweets. Actual tweets are GET by loadTweets function below.)
+  // const tweetData = [
+  //   {
+  //     "user": {
+  //       "name": "Newton",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png"
+  //       ,
+  //       "handle": "@SirIsaac"
+  //     },
+  //     "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //     "created_at": 1461116232227
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Descartes",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@rd" },
+  //     "content": {
+  //       "text": "Je pense , donc je suis"
+  //     },
+  //     "created_at": 1461113959088
+  //   }
+  // ]
 
   //Takes tweet data and formats it into HTML
   const createTweetElement = function (tweetObj) {
@@ -45,34 +71,21 @@ $(document).ready(function() {
       $('.tweets-container').append($returnTweetHTML)
     }
   }
-  
-  //Database of all tweets
-  const tweetData = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
 
-  //Call function to render tweets
-  renderTweets(tweetData);
+  //Call function to render tweets (DEPRECATED: replaced by loadTweets function below. Uses actual database at /tweets as opposed to variable above)
+  // renderTweets(tweetData);
+
+  //Sends tweets located at /tweets to renderTweets function
+  const loadTweets = function() {
+    //Performs GET request
+    $.ajax({url: '/tweets', method: 'GET', dataType: 'JSON'})
+    //Once data recieved (async), send to renderTweets function
+    .then(function(response) {
+      renderTweets(response)
+    });
+  }
+
+  //Calls loadTweets function. This allows it to run asynchronously. Once ready the response is sent to the renderTweets function.
+  loadTweets();
 });
 

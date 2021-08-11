@@ -12,8 +12,9 @@ $(document).ready(function() {
     //String represented typed in tweet but in standard URL-encoded notation
     const $serializedTweet = $typedTweet.serialize() 
 
-    //Send entered tweet data to the tweetData "database"
-    $.ajax({url: '/tweets', data: $serializedTweet, method: 'POST'}).then(function(response) {
+    //Send entered tweet data to the tweetData "database" (.then not required...but nice to have)
+    $.ajax({url: '/tweets', data: $serializedTweet, method: 'POST'})
+    .then(function(response) {
       console.log("Succesful, tweet passed to tweetData");
     })
   })  
