@@ -1,3 +1,16 @@
+.container {
+  border: red 5px solid;
+  flex-basis: 50%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    margin-top: 40px;    
+  }
+}
+
+
+
 .new-tweet {
   display: flex;
   flex-direction: column;
@@ -16,12 +29,12 @@
   margin-bottom: 20px;
 }
 
-.new-tweet h2 {
-  /* text-align: center; remove this if want text not aligned center */
-}
+/* .new-tweet h2 {
+  /* text-align: center; remove this if want text not aligned center 
+} */
 
 #tweet-entry-area {
-  width: 80%; /*width of parent area as a percentage*/
+  width: 90%; /*width of parent area as a percentage*/
 }
 
 #tweet-text {

@@ -1,9 +1,13 @@
+.container {
+
+}
+
 .tweets-container {
   /* border: #545149 4px solid;
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 10px; */
-  width: 80%;
+  width: 100%;
 }
 
 .tweet-article {
