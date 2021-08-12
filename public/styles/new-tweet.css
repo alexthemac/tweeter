@@ -5,8 +5,19 @@
   width: 100%;
 }
 
+.error {
+  width: 80%;
+  border: red 5px solid;
+  text-align: center;
+  font-weight: 600;
+  font-size: 150%;
+  color: red;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .new-tweet h2 {
-  text-align: center; /*remove this if want text not aligned center*/
+  /* text-align: center; remove this if want text not aligned center */
 }
 
 #tweet-entry-area {
@@ -20,6 +31,7 @@
   border-bottom: #545149 solid 4px;
   background-color: #f4f1ec;
   width: 100%; /*width of parent area as a percentage*/
+  margin-top: 20px;
 }
 
 .submit-tweet {

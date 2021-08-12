@@ -11,10 +11,24 @@
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 10px;
-
-
   display: flex;
   flex-direction: column;
+}
+
+.tweet-article:hover {
+  box-shadow: 10px 5px 5px green;
+}
+
+.flag:hover {
+  color: green;
+}
+
+.retweet:hover {
+  color: green;
+}
+
+.heart:hover {
+  color: green;
 }
 
 .tweet-article header {

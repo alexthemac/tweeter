@@ -8,32 +8,6 @@
 
 $(document).ready(function() {
 
-  //Database of all tweets (DEPRECATED: replaced by actual database from /tweets. Actual tweets are GET by loadTweets function below.)
-  // const tweetData = [
-  //   {
-  //     "user": {
-  //       "name": "Newton",
-  //       "avatars": "https://i.imgur.com/73hZDYK.png"
-  //       ,
-  //       "handle": "@SirIsaac"
-  //     },
-  //     "content": {
-  //       "text": "If I have seen further it is by standing on the shoulders of giants"
-  //     },
-  //     "created_at": 1461116232227
-  //   },
-  //   {
-  //     "user": {
-  //       "name": "Descartes",
-  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
-  //       "handle": "@rd" },
-  //     "content": {
-  //       "text": "Je pense , donc je suis"
-  //     },
-  //     "created_at": 1461113959088
-  //   }
-  // ]
-
   //Takes tweet data and formats it into HTML
   const createTweetElement = function (tweetObj) {
 
@@ -72,9 +46,6 @@ $(document).ready(function() {
     }
   }
 
-  //Call function to render tweets (DEPRECATED: replaced by loadTweets function below. Uses actual database at /tweets as opposed to variable above)
-  // renderTweets(tweetData);
-
   //Sends tweets located at /tweets to renderTweets function
   const loadTweets = function() {
     //Performs GET request
@@ -100,11 +71,18 @@ $(document).ready(function() {
 
     //Alert if tweet entered is empty or too long. 
     if (!$typedTweet) {
-      alert("Tweet is empty! Please try again.")
+      //Adds error message at top of new-tweet section
+      $(".error").remove();
+      $('.new-tweet').prepend(`<div class="error"><i class="fas fa-exclamation-triangle"></i>Tweet is empty. Please try again<i class="fas fa-exclamation-triangle"></i></div>`)
     } else if ($typedTweet.length > 140) {
-      alert("Tweet is too long! Please try again.")
+      //Adds error message at top of new-tweet section
+      $(".error").remove();
+      $('.new-tweet').prepend(`<div class="error"><i class="fas fa-exclamation-triangle"></i>Tweet is too long (140 characters max)! Please try again<i class="fas fa-exclamation-triangle"></i></div>`)
     //If tweet is correct size and not empty, send tweet data to database.
     } else {
+      //Removes error message, if there is one. 
+      $(".error").remove();
+
       //String represented typed in tweet but in standard URL-encoded notation
       const $serializedTweet = $typedTweetObj.serialize() 
 
@@ -125,6 +103,5 @@ $(document).ready(function() {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-
 });
 
