@@ -15,18 +15,6 @@
   box-shadow: 10px 5px 5px green;
 }
 
-.flag:hover {
-  color: green;
-}
-
-.retweet:hover {
-  color: green;
-}
-
-.heart:hover {
-  color: green;
-}
-
 .tweet-article header {
   
   display: flex;
@@ -42,7 +30,6 @@
   flex-basis: 18%;
   align-items:center;
 }
-
 
 .tweet-article p {
   margin: 0;
@@ -61,4 +48,16 @@
   display: flex;
   justify-content:space-between;
   flex-basis: 15%;
+}
+
+.flag:hover {
+  color: green;
+}
+
+.retweet:hover {
+  color: green;
+}
+
+.heart:hover {
+  color: green;
 }

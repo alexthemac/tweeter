@@ -56,6 +56,10 @@ nav {
   background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
 }
 
+.main-header img {
+  flex-basis: 25%;
+}
+
 @media only screen and (max-width: 1024px) {
   nav {
     background-color: green;
@@ -66,8 +70,4 @@ nav {
     width: 100%;
     margin-left: 0;
   }
-}
-
-.main-header img {
-  flex-basis: 25%;
 }
