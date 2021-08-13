@@ -32,6 +32,7 @@ nav {
 
 .WriteANewTweet {
   display: flex;
+  cursor: pointer;
 }
 
 .text-bold {

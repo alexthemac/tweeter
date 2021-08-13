@@ -110,10 +110,15 @@ $(document).ready(function() {
   })
 
   //Function to transform text entered to prevent an XSS attack with escaping (is used inside createTweetElement function)
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
+
+  //Toggle new tweet entry area when "Write a new tweet" is clicked
+  $(".WriteANewTweet").click(function(){
+    $(".new-tweet").toggle();
+  });
 });
 
