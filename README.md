@@ -4,6 +4,18 @@ Tweeter is a simple, single-page Twitter clone.
 
 This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
 
+## Final Product 
+
+!["Screenshot of full screen landing page"](https://github.com/alexthemac/tweeter/blob/master/docs/fullScreenLandingPage.png)
+
+![Screenshot of full screen landing page tweet submitted](https://github.com/alexthemac/tweeter/blob/master/docs/fullScreenNewTweetSubmitted.png)
+
+![Screenshot of full screen landing page write new tweet](https://github.com/alexthemac/tweeter/blob/master/docs/fullScreenWriteNewTweet.png)
+
+![Screenshot of mobile landing page with empty tweet error](https://github.com/alexthemac/tweeter/blob/master/docs/mobileError1.png)
+
+![Screenshot of mobile landing page with tweet too long error](https://github.com/alexthemac/tweeter/blob/master/docs/mobileError2.png)
+
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
