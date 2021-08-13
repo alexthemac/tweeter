@@ -59,11 +59,25 @@ $(document).ready(function() {
   //Calls loadTweets on page load. This allows it to run asynchronously. Once ready the response is sent to the renderTweets function.
   loadTweets();
 
+  //Sends last entered tweet to renderTweets function
+  const loadLastTweet = function () {
+    $.ajax({url: '/tweets', method: 'GET', dataType: 'JSON'})
+    //Once data recieved (async), send to renderTweets function
+    .then(function(response) {
+      //Last item in response array is last tweet 
+      const lastTweet = response[response.length - 1];
+      //passes the last created tweet data (last element in response array) to createTweetElement function
+      $returnTweetHTML = createTweetElement(lastTweet);
+      //returned HTML is then prepended to index.html (added at top: prepend. added at bottom: append)
+      $('.tweets-container').prepend($returnTweetHTML);
+    });
+  }
+
   //Listens for the submit event on tweet button. When pressed, sends entered tweet to the tweetData "Database"
   $("#tweet-entry-area").on("submit", function(event) {
     //Prevent page from reloading once submit button pressed
     event.preventDefault();
-
+    
     //Object representing typed in tweet
     const $typedTweetObj = $(this).parent().find("#tweet-text");
     //Actual text typed in
@@ -89,10 +103,8 @@ $(document).ready(function() {
       //Send entered tweet data to the tweetData "database"
       $.ajax({url: '/tweets', data: $serializedTweet, method: 'POST'})
       .then(function(response) {
-        //Empty the currently loaded tweets (prevents duplicates)
-        $(".tweets-container").empty();
-        //Loads tweets (including newest tweet that was just entered)
-        loadTweets();
+        //Loads the most recently created tweet on top of other tweets
+        loadLastTweet();
       })
     };
   })
