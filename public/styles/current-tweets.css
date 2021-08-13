@@ -1,12 +1,4 @@
-.container {
-
-}
-
 .tweets-container {
-  /* border: #545149 4px solid;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 10px; */
   width: 100%;
 }
 
@@ -61,7 +53,6 @@
 }
 
 .tweet-article footer {
-  /* border: rgb(217, 255, 0) 2px dotted; */
   display: flex;
   justify-content: space-between;
 }

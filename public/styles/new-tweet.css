@@ -1,5 +1,4 @@
 .container {
-  border: red 5px solid;
   flex-basis: 50%;
 }
 
@@ -9,8 +8,6 @@
   }
 }
 
-
-
 .new-tweet {
   display: flex;
   flex-direction: column;
@@ -19,22 +16,18 @@
 }
 
 .error {
-  width: 80%;
+  width: 100%;
   border: red 5px solid;
   text-align: center;
   font-weight: 600;
-  font-size: 150%;
+  font-size: 100%;
   color: red;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-/* .new-tweet h2 {
-  /* text-align: center; remove this if want text not aligned center 
-} */
-
 #tweet-entry-area {
-  width: 90%; /*width of parent area as a percentage*/
+  width: 100%; /*width of parent area as a percentage*/
 }
 
 #tweet-text {
@@ -43,7 +36,7 @@
   border: 0;
   border-bottom: #545149 solid 4px;
   background-color: #f4f1ec;
-  width: 100%; /*width of parent area as a percentage*/
+  width: 100%; 
   margin-top: 20px;
 }
 

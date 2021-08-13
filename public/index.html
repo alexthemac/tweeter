@@ -14,8 +14,6 @@
     <!-- Arrow icon for header-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
-
     <!-- App CSS (.css goes here) --> 
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
@@ -60,7 +58,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <!--error message goes here-->
+        <!--Error message goes here (see client.js)-->
         <form method="POST" action="/tweets" id="tweet-entry-area">
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="submit-tweet">
@@ -70,7 +68,7 @@
         </form>
       </section>
       <section class="tweets-container">
-        <!--Appended tweets go here from (see client.js)-->
+        <!--Appended tweets go here (see client.js)-->
       </section>
     </main>
   </body>

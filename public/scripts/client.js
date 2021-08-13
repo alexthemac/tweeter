@@ -4,8 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// const { response } = require("express");
-
 $(document).ready(function() {
 
   //Takes tweet data and formats it into HTML
@@ -32,7 +30,7 @@ $(document).ready(function() {
     return $tweet;
   }
 
-  //Renders tweets.
+  //Renders tweets
   const renderTweets = function(tweets) {
 
     let $returnTweetHTML;
@@ -87,11 +85,11 @@ $(document).ready(function() {
     if (!$typedTweet) {
       //Adds error message at top of new-tweet section
       $(".error").remove();
-      $('.new-tweet').prepend(`<div class="error"><i class="fas fa-exclamation-triangle"></i>Tweet is empty. Please try again<i class="fas fa-exclamation-triangle"></i></div>`)
+      $('.new-tweet').prepend(`<div class="error"><i class="fas fa-exclamation-triangle"></i>&nbsp&nbsp&nbspTweet is empty. Please try again&nbsp&nbsp&nbsp<i class="fas fa-exclamation-triangle"></i></div>`)
     } else if ($typedTweet.length > 140) {
       //Adds error message at top of new-tweet section
       $(".error").remove();
-      $('.new-tweet').prepend(`<div class="error"><i class="fas fa-exclamation-triangle"></i>Tweet is too long (140 characters max)! Please try again<i class="fas fa-exclamation-triangle"></i></div>`)
+      $('.new-tweet').prepend(`<div class="error"><i class="fas fa-exclamation-triangle"></i>&nbsp&nbsp&nbspTweet is too long (140 characters max)! Please try again&nbsp&nbsp&nbsp<i class="fas fa-exclamation-triangle"></i></div>`)
     //If tweet is correct size and not empty, send tweet data to database.
     } else {
       //Removes error message, if there is one. 
@@ -109,7 +107,7 @@ $(document).ready(function() {
     };
   })
 
-  //Function to transform text entered to prevent an XSS attack with escaping (is used inside createTweetElement function)
+  //Transform text entered to prevent an XSS attack with escaping (is used inside createTweetElement function)
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
