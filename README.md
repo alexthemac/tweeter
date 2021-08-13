@@ -8,9 +8,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 !["Screenshot of full screen landing page"](https://github.com/alexthemac/tweeter/blob/master/docs/fullScreenLandingPage.png)
 
-![Screenshot of full screen landing page tweet submitted](https://github.com/alexthemac/tweeter/blob/master/docs/fullScreenNewTweetSubmitted.png)
-
 ![Screenshot of full screen landing page write new tweet](https://github.com/alexthemac/tweeter/blob/master/docs/fullScreenWriteNewTweet.png)
+
+![Screenshot of full screen landing page tweet submitted](https://github.com/alexthemac/tweeter/blob/master/docs/fullScreenNewTweetSubmitted.png)
 
 ![Screenshot of mobile landing page with empty tweet error](https://github.com/alexthemac/tweeter/blob/master/docs/mobileError1.png)
 
