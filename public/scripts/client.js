@@ -74,7 +74,7 @@ $(document).ready(function() {
   $("#tweet-entry-area").on("submit", function(event) {
     //Prevent page from reloading once submit button pressed
     event.preventDefault();
-    
+  
     //Object representing typed in tweet
     const $typedTweetObj = $(this).parent().find("#tweet-text");
     //Actual text typed in
@@ -104,6 +104,8 @@ $(document).ready(function() {
           loadLastTweet();
         });
     }
+    //Clear text area after data has been sent 
+    $('#tweet-text').val('');
   });
 
   //Transform text entered to prevent an XSS attack with escaping (is used inside createTweetElement function)
